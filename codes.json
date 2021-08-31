@@ -1,5 +1,5 @@
 {
-    "codes" : {
+    "codes": {
         "ping": "Client Ping Test",
         "pong": "Websocket Ping Response",
         "restart": "Websocket Restart Request, Requires Auth Key",
@@ -15,8 +15,7 @@
         "09": "Uptime Marker",
         "10": "Uptime Request"
     },
-
-    "sancus_codes" :{
+    "sancus_codes": {
         "1000": "Reaction Response",
         "1001": "Reaction Create",
         "1002": "Reaction Remove",
