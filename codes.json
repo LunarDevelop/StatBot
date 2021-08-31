@@ -1,0 +1,26 @@
+{
+    "codes" : {
+        "ping": "Client Ping Test",
+        "pong": "Websocket Ping Response",
+        "restart": "Websocket Restart Request, Requires Auth Key",
+        "501": "Not Implemented Yet",
+        "01": "Client Heartbeat",
+        "02": "Websocket Heartbeat Response",
+        "03": "Standard Websocket Response",
+        "04": "Command Used On Bot",
+        "05": "User Joined a Guild",
+        "06": "User Left a Guild",
+        "07": "New Guild Added",
+        "08": "Guild Removed",
+        "09": "Uptime Marker",
+        "10": "Uptime Request"
+    },
+
+    "sancus_codes" :{
+        "1000": "Reaction Response",
+        "1001": "Reaction Create",
+        "1002": "Reaction Remove",
+        "1003": "Reaction Modify",
+        "1004": "Reaction Get Request, to be called at the start of the bot to be stored locally",
+    }
+}
