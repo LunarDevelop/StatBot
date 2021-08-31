@@ -256,7 +256,7 @@ class clientClass():
                     }
 
                     request = requests.post(
-                        url="https://discord.com/api/webhooks/879356036027387924/g-iGetWb1kUfOYzX6MluBZjaITvKpHCx7QJnoE7MLutHxpT0r9rvhMYfXA5wAf9xF8DZ", json=webhook_failed)
+                        url="Enter Webhook key from Discord", json=webhook_failed)
 
                     if request.ok:
                         print("> Webhook Failed Connection Send")
