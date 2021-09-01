@@ -228,11 +228,10 @@ class clientClass():
                     stringDuration = datetimeDuration.strftime("%H:%M:%S")
 
                     webhook_failed = {
-                        "content": "",
+                        "content": "<@268035643760836608>***, FIX NOW!!***",  # Tags Solar for attention,
                         "embeds": [
                             {
-                                "title": f'Connection Failed | {bot["botName"]}',
-                                "description": "<@268035643760836608>***, FIX NOW!!***",  # Tags Solar for attention
+                                "title": f'Connection Failed | {bot["botName"]}', 
                                 "color": 16711714,
                                 "fields": [
                                     {
@@ -256,7 +255,7 @@ class clientClass():
                     }
 
                     request = requests.post(
-                        url="Enter Webhook key from Discord", json=webhook_failed)
+                        url="WEBHOOK URL", json=webhook_failed)
 
                     if request.ok:
                         print("> Webhook Failed Connection Send")
