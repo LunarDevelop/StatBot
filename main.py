@@ -168,17 +168,62 @@ class clientClass():
 
                         await self.send(websocket, message)
 
-            elif data["type"] == "1001":
-                raise NotImplementedError
+            elif data["type"] == "11":
+                botName = data["data"]["botName"]
+                
+                jData = open_file()
+                
+                for bot in jData["bots"]:
+                    if bot["botName"] == botName:
+                        message = json.dumps(
+                            {
+                                "type":"12",
+                                "data":bot
+                            }
+                        )
+                        
+                        await self.send(websocket, message)
 
-            elif data["type"] == "1002":
-                raise NotImplementedError
+            elif data["type"] == "13":
+                jData = open_file()
 
-            elif data["type"] == "1003":
-                raise NotImplementedError
+                for bot in jData["bots"]:
+                    if bot["botName"] == data["data"]["botName"].lower():
+                        bot["guilds"] = data["data"]["total"]
 
-            elif data["type"] == "1004":
-                raise NotImplementedError
+                        save_file(jData)
+
+                        message = {
+                            "type": "03",
+                            "data": {
+                                "message": f'Guild total has been updated for {data["data"]["botName"]}.'
+                            }
+                        }
+
+                        await self.send(websocket, message)
+
+                        return
+
+            elif data["type"] == "14":
+                jData = open_file()
+
+                for bot in jData["bots"]:
+                    if bot["botName"] == data["data"]["botName"].lower():
+                        bot["users"] = data["data"]["total"]
+
+                        save_file(jData)
+
+                        message = {
+                            "type": "03",
+                            "data": {
+                                "message": f'User total has been updated for {data["data"]["botName"]}.'
+                            }
+                        }
+
+                        await self.send(websocket, message)
+
+                        return
+
 
         except NotImplementedError:
 
@@ -307,7 +352,7 @@ def run():
     # Rest of the code
     client = clientClass()
 
-    startServer = websockets.serve(client.recv, "localhost", 8765)
+    startServer = websockets.serve(client.recv, "0.0.0.0", 8765)
 
     tasks = [
         asyncio.ensure_future(client.error()),

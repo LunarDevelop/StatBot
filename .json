@@ -1,1 +1,15 @@
-{}
+{
+    "bots": [
+        {
+            "botName": "swearbot",
+            "timestamp": "24-08-2021 (12:50:37)",
+            "commandCount": 1,
+            "uptime": "23-08-2021 (00:50:37)"
+        },
+        {
+            "botName": "sancus",
+            "timestamp": "10-10-2021 (12:24:58)",
+            "uptime": "10-10-2021 (12:25:00)"
+        }
+    ]
+}
